@@ -17,11 +17,6 @@
             <artifactId>collect-ground-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>per.cby.terminal</groupId>
-            <artifactId>terminal-handle</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
     <build>
         <plugins>

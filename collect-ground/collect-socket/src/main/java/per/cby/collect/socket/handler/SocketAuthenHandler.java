@@ -2,10 +2,7 @@ package per.cby.collect.socket.handler;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import per.cby.collect.socket.util.SocketSupport;
-import per.cby.frame.common.exception.BusinessAssert;
-import per.cby.terminal.redis.TerminalAuthenHash;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
@@ -13,6 +10,10 @@ import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.slf4j.Slf4j;
+import per.cby.collect.common.constant.CollectConstant;
+import per.cby.collect.socket.util.SocketSupport;
+import per.cby.frame.common.exception.BusinessAssert;
+import per.cby.frame.redis.storage.value.CatalogRedisValueStorage;
 
 /**
  * 套接字认证处理器
@@ -26,7 +27,8 @@ import lombok.extern.slf4j.Slf4j;
 public class SocketAuthenHandler extends ChannelInboundHandlerAdapter {
 
     @Autowired(required = false)
-    private TerminalAuthenHash terminalAuthenHash;
+    @Qualifier(CollectConstant.TERMINAL_AUTHEN_HASH)
+    private CatalogRedisValueStorage<Boolean> terminalAuthenHash;
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

@@ -33,4 +33,7 @@ public interface CollectConstant {
     /** FOTA报文尾部标识 */
     int FOTA_TAIL = 0xAAFF;
 
+    /** 终端认证哈希存储 */
+    String TERMINAL_AUTHEN_HASH = "__TERMINAL_AUTHEN_HASH__";
+
 }

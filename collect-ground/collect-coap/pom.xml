@@ -25,11 +25,6 @@
             <groupId>org.eclipse.californium</groupId>
             <artifactId>scandium</artifactId>
         </dependency>
-        <dependency>
-            <groupId>per.cby.terminal</groupId>
-            <artifactId>terminal-handle</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
